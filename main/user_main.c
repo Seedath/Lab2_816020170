@@ -151,7 +151,7 @@ void app_main(void)
 	
 	vTaskGetRunTimeStats(stats_buffer);
 	
-	printf("Task            Abs Time        Time\n");
+	printf("Task            Abs Time        %%\n");
     printf("************************************\n");
     printf(stats_buffer, "\n");
 	
