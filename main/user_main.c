@@ -41,6 +41,38 @@ static void task3_print(void *pvParameters);
 static char stats_buffer[2000];
 void vTaskGetRunTimeStats(char *pcWriteBuffer);
 
+/*V1 Priority*//*
+#define task1_priority	1
+#define task2_priority	2
+#define task3_priority	3
+*/
+/*V2 Priority*//*
+#define task1_priority	1
+#define task2_priority	3
+#define task3_priority	2
+*/
+/*V3 Priority*//*
+#define task1_priority	2
+#define task2_priority	1
+#define task3_priority	3
+*/
+/*V4 Priority*//*
+#define task1_priority	2
+#define task2_priority	3
+#define task3_priority	1
+*/
+/*V5 Priority*//*
+#define task1_priority	3
+#define task2_priority	2
+#define task3_priority	1
+*/
+/*V6 Priority*/
+#define task1_priority	3
+#define task2_priority	1
+#define task3_priority	2
+
+
+
 static void task1_on(void *pvParameters)
 {
 	while (1) {
@@ -143,15 +175,15 @@ void app_main(void)
     xMutex = xSemaphoreCreateMutex();
 	
 	/*FreeRTOS uses preemptive round-robin scheduling if priorities are equal*/
-    xTaskCreate(task1_on, "LED ON", 2048, NULL, 2, NULL);
+    xTaskCreate(task1_on, "LED ON", 2048, NULL, task1_priority, NULL);
 
-    xTaskCreate(task2_off, "LED OFF", 2048, NULL, 2, NULL);
+    xTaskCreate(task2_off, "LED OFF", 2048, NULL, task2_priority, NULL);
 
-    xTaskCreate(task3_print, "Print Status", 2048, NULL, 2, NULL);
+    xTaskCreate(task3_print, "Print Status", 2048, NULL, task3_priority, NULL);
 	
 	vTaskGetRunTimeStats(stats_buffer);
 	
-	printf("Task            Abs Time        Time\n");
+	printf("Task            Abs Time       %%Time\n");
     printf("************************************\n");
     printf(stats_buffer, "\n");
 	
