@@ -15,7 +15,7 @@ Priority inheritance means that if a high priority task blocks while attempting 
 The 3 tasks are task1_on (LED ON), task2_off (LED OFF) and task3_print (Print Status). Their priorities were varied to observe the effect priority inheritance by checking the run time stats and looking for priority inversion and utilization.
 
 V1: LED ON (P=1) LED OFF (P=2) Print Status (P=3)
-<img align="left" width="100" height="100"![v1](https://user-images.githubusercontent.com/113147843/201496965-bafe8580-bf8f-4350-a18c-7d5d75e2f7c4.JPG)>
+<img align="left" width="100" height="100" src="https://user-images.githubusercontent.com/113147843/201496965-bafe8580-bf8f-4350-a18c-7d5d75e2f7c4.JPG">
 
 V2: LED ON (P=1) LED OFF (P=3) Print Status (P=2)
 ![v2](https://user-images.githubusercontent.com/113147843/201497045-99a998f5-6c90-490b-b185-3b71f14e37a6.JPG)
