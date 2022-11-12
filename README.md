@@ -1,21 +1,34 @@
 # _3006 Lab 2_
 
-## Branching
+## Run Time Stats
 
- * The main branch only contains information about the repo and serves as the information oage
- * Each question number is on a different branch since they build of each other
- * If a question number has multiple parts, they will also be on a new and separate branch in the project
- 
-## P1: How do the following files affect the FreeRTOS
+For run time stats to be obtained, configGENERATE_RUN_TIME_STATS, portCONFIGURE_TIMER_FOR_RUN_TIME_STATS() and portGET_RUN_TIME_COUNTER_VALUE() must be defined in FreeRTOSConfig.h which can be set by configuring the files using the "make menuconfig" command and configuring the components.
 
-### /project/sdkconfig
+## Round Robin Scheduling
 
-This file is application specific file. It sets the hardware configuration and customize the SDK for your specific board. Each project containts this file and it contains the settings and configuration for flashing the mircoprocessor. Thus, if the contents of this file is changed without caution, it can have cause an error in the flashing and serial monitoring process and impact the functionality of the device. For example, if a function is not defined properly then its functionality would not be available to the device.
+Round robin scheduling is used by FreeRTOS when the priorities of tasks are the same. configUSE_TIME_SLICING and configUSE_PREEMPTION must also be in use to allow for the tasks to switch on each tick interrupt.
 
-### /project/build/include/sdkconfig.h
+## Priority Inheritance 
 
-This is also an application specific file. It defines what you want the sdk can be set up to do and also what features of the kernel you want to be turned on or off. The file's #DEFINE's are set up when the project is successfully build and is generated according to the project's sdkconfig file. The sdkconfig file will therefore update the information in this header file and errors in that file would also affect this file. Additionally, if you have a memory or space issue, you can turn features off here to reduce the additional tasks that will be launched for those specific functions and will reduce the size of the final binary. 
+Priority inheritance means that if a high priority task blocks while attempting to obtain a mutex that is currently held by a lower priority task, then the priority of the task holding the mutex is temporarily raised to that of the blocked task. (Source: https://embeddedcomputing.com)
 
-### /sdk/components/freertos/port/esp8266/include/freertos/FreeRTOSConfig.h
+The 3 tasks are task1_on (LED ON), task2_off (LED OFF) and task3_print (Print Status). Their priorities were varied to observe the effect priority inheritance by checking the run time stats and looking for priority inversion and utilization.
 
-This is a port specific file. It configures FreeRTOS for the ESP SDK. If you turn off a function here the function would not be available on the SDK. Thus, defining the statements allows for the use of the functions from the FreeRTOS Kernel but increases the size of the binary. If a function is not defined in this file, it would not be accessible even if it is defined in the other files.
+V1: LED ON (P=1) LED OFF (P=2) Print Status (P=3)
+![v1](https://user-images.githubusercontent.com/113147843/201496965-bafe8580-bf8f-4350-a18c-7d5d75e2f7c4.JPG)
+
+V2: LED ON (P=1) LED OFF (P=3) Print Status (P=2)
+![v2](https://user-images.githubusercontent.com/113147843/201497045-99a998f5-6c90-490b-b185-3b71f14e37a6.JPG)
+
+V3: LED ON (P=2) LED OFF (P=1) Print Status (P=3)
+![v3](https://user-images.githubusercontent.com/113147843/201497049-5bb53fa1-577f-4412-b88b-9bffd710ed58.JPG)
+
+V4: LED ON (P=2) LED OFF (P=3) Print Status (P=1)
+![v4](https://user-images.githubusercontent.com/113147843/201497054-99ff3057-969e-48b5-8c17-96c715c61c17.JPG)
+
+V5: LED ON (P=3) LED OFF (P=2) Print Status (P=1)
+![v5](https://user-images.githubusercontent.com/113147843/201497062-7b002d8b-4182-42ee-b1c5-dc1a5c937f14.JPG)
+
+V6: LED ON (P=3) LED OFF (P=1) Print Status (P=2)
+![v6](https://user-images.githubusercontent.com/113147843/201497064-6abd31d3-32e7-4530-a045-15229da404ed.JPG)
+
