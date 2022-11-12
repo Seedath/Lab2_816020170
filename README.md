@@ -12,7 +12,7 @@ Round robin scheduling is used by FreeRTOS when the priorities of tasks are the 
 
 Priority inheritance means that if a high priority task blocks while attempting to obtain a mutex that is currently held by a lower priority task, then the priority of the task holding the mutex is temporarily raised to that of the blocked task. (Source: https://embeddedcomputing.com)
 
-The 3 tasks are task1_on (LED ON), task2_off (LED OFF) and task3_print (Print Status). Their priorities were varied to observe the effect priority inheritance by checking the run time stats and looking for priority inversion and utilization.
+The 3 tasks are task1_on (LED ON), task2_off (LED OFF) and task3_print (Print Status). Their priorities were varied to observe the effect priority inheritance by checking the run time stats and looking for priority inversion and utilization. The output files for each version (V1-6) are available but a summary of the results are shown below:
 
 V1: LED ON (P=1) LED OFF (P=2) Print Status (P=3)
 ![v1](https://user-images.githubusercontent.com/113147843/201496965-bafe8580-bf8f-4350-a18c-7d5d75e2f7c4.JPG)
