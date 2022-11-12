@@ -1,0 +1,184 @@
+I (8218) main: Task 1 completed...
+
+I (8220) main: GPIO2 PIN set to 0 : LED is OFF
+
+I (8250) main: STATUS of GPIO2: 0
+
+I (8251) main: Task 3 completed...
+
+I (8720) main: Task 2 completed...
+
+I (9210) main: GPIO2 PIN set to 1 : LED is ON
+
+I (9250) main: STATUS of GPIO2: 1
+
+I (9251) main: Task 3 completed...
+
+I (9710) main: Task 1 completed...
+
+I (9720) main: GPIO2 PIN set to 0 : LED is OFF
+
+I (10219) main: Task 2 completed...
+
+I (10251) main: STATUS of GPIO2: 0
+
+I (10252) main: Task 3 completed...
+
+I (10711) main: GPIO2 PIN set to 1 : LED is ON
+
+I (11209) main: Task 1 completed...
+
+I (11211) main: GPIO2 PIN set to 0 : LED is OFF
+
+I (11251) main: STATUS of GPIO2: 0
+
+I (11252) main: Task 3 completed...
+
+I (11711) main: Task 2 completed...
+
+I (12201) main: GPIO2 PIN set to 1 : LED is ON
+
+I (12251) main: STATUS of GPIO2: 1
+
+I (12252) main: Task 3 completed...
+
+I (12701) main: Task 1 completed...
+
+I (12711) main: GPIO2 PIN set to 0 : LED is OFF
+
+I (13209) main: Task 2 completed...
+
+I (13251) main: STATUS of GPIO2: 0
+
+I (13252) main: Task 3 completed...
+
+I (13701) main: GPIO2 PIN set to 1 : LED is ON
+
+I (14199) main: Task 1 completed...
+
+I (14201) main: GPIO2 PIN set to 0 : LED is OFF
+
+I (14251) main: STATUS of GPIO2: 0
+
+I (14252) main: Task 3 completed...
+
+I (14701) main: Task 2 completed...
+
+I (15191) main: GPIO2 PIN set to 1 : LED is ON
+
+I (15251) main: STATUS of GPIO2: 1
+
+I (15252) main: Task 3 completed...
+
+I (15691) main: Task 1 completed...
+
+I (15701) main: GPIO2 PIN set to 0 : LED is OFF
+
+
+ ets Jan  8 2013,rst cause:2, boot mode:(3,6)
+
+load 0x40100000, len 7040, room 16
+tail 0
+chksum 0xee
+load 0x3ffe8408, len 24, room 8
+tail 0
+chksum 0x67
+load 0x3ffe8420, len 3324, room 8
+tail 4
+chksum 0x47
+csum 0x47
+I (46) boot: ESP-IDF v3.4-49-g0f200b46 2nd stage bootloader
+I (46) boot: compile time 18:24:00
+I (46) qio_mode: Enabling default flash chip QIO
+I (54) boot: SPI Speed      : 40MHz
+I (60) boot: SPI Mode       : QIO
+I (66) boot: SPI Flash Size : 2MB
+I (73) boot: Partition Table:
+I (78) boot: ## Label            Usage          Type ST Offset   Length
+I (89) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (101) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (112) boot:  2 factory          factory app      00 00 00010000 000f0000
+I (124) boot: End of partition table
+I (131) esp_image: segment 0: paddr=0x00010010 vaddr=0x40210010 size=0x1670c ( 91916) map
+I (175) esp_image: segment 1: paddr=0x00026724 vaddr=0x4022671c size=0x05a7c ( 23164) map
+I (183) esp_image: segment 2: paddr=0x0002c1a8 vaddr=0x3ffe8000 size=0x003dc (   988) load
+I (186) esp_image: segment 3: paddr=0x0002c58c vaddr=0x40100000 size=0x00080 (   128) load
+I (200) esp_image: segment 4: paddr=0x0002c614 vaddr=0x40100080 size=0x04590 ( 17808) load
+I (219) boot: Loaded app from partition at offset 0x10000
+I (239) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0
+I (241) main: GPIO2 PIN set to 1 : LED is ON
+
+I (742) main: Task 1 completed...
+
+I (743) main: GPIO2 PIN set to 0 : LED is OFF
+
+I (1242) main: Task 2 completed...
+
+I (1243) main: STATUS of GPIO2: 0
+
+I (1243) main: Task 3 completed...
+
+Task            Abs Time        Time
+************************************
+uiT             13664           1
+IDLE            0               <1
+LED OFF         499216          42
+Print Status    2169            <1
+LED ON          502752          43
+Tmr Svc         148671          12
+I (1743) main: GPIO2 PIN set to 1 : LED is ON
+
+I (2241) main: Task 1 completed...
+
+I (2242) main: GPIO2 PIN set to 0 : LED is OFF
+
+I (2253) main: STATUS of GPIO2: 0
+
+I (2254) main: Task 3 completed...
+
+I (2742) main: Task 2 completed...
+
+I (3233) main: GPIO2 PIN set to 1 : LED is ON
+
+I (3253) main: STATUS of GPIO2: 1
+
+I (3254) main: Task 3 completed...
+
+I (3733) main: Task 1 completed...
+
+I (3743) main: GPIO2 PIN set to 0 : LED is OFF
+
+I (4241) main: Task 2 completed...
+
+I (4253) main: STATUS of GPIO2: 0
+
+I (4254) main: Task 3 completed...
+
+I (4733) main: GPIO2 PIN set to 1 : LED is ON
+
+I (5231) main: Task 1 completed...
+
+I (5233) main: GPIO2 PIN set to 0 : LED is OFF
+
+I (5253) main: STATUS of GPIO2: 0
+
+I (5254) main: Task 3 completed...
+
+I (5733) main: Task 2 completed...
+
+I (6223) main: GPIO2 PIN set to 1 : LED is ON
+
+I (6253) main: STATUS of GPIO2: 1
+
+I (6254) main: Task 3 completed...
+
+I (6723) main: Task 1 completed...
+
+I (6733) main: GPIO2 PIN set to 0 : LED is OFF
+
+I (7231) main: Task 2 completed...
+
+I (7253) main: STATUS of GPIO2: 0
+
+I (7254) main: Task 3 completed...
+
