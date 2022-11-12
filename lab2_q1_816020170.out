@@ -1,0 +1,66 @@
+I (10739) main: GPIO2 PIN set to 1 : LED is ON
+
+I (11238) main: Task 1 completed...
+
+I (11239) main: GPIO2 PIN set to 0 : LED is OFF
+
+I (11738) main: Task 2 completed...
+
+I (11739) main: STATUS of GPIO2: 0
+
+I (11741) main: Task 3 completed...
+
+I (12239) main: GPIO2 PIN set to 1 : LED is ON
+
+I (12738) main: Task 1 completed...
+
+I (12739) main: GPIO2 PIN set to 0 : LED is OFF
+
+I (13238) main: Task 2 completed...
+
+I (13239) main: STATUS of GPIO2: 0
+
+I (13241) main: Task 3 completed...
+
+I (13739) main: GPIO2 PIN set to 1 : LED is ON
+
+I (14238) main: Task 1 completed...
+
+I (14239) main: GPIO2 PIN set to 0 : LED is OFF
+
+I (14738) main: Task 2 completed...
+
+I (14739) main: STATUS of GPIO2: 0
+
+I (14741) main: Task 3 completed...
+
+I (15239) main: GPIO2 PIN set to 1 : LED is ON
+
+I (15738) main: Task 1 completed...
+
+I (15739) main: GPIO2 PIN set to 0 : LED is OFF
+
+I (16238) main: Task 2 completed...
+
+I (16239) main: STATUS of GPIO2: 0
+
+I (16241) main: Task 3 completed...
+
+I (16739) main: GPIO2 PIN set to 1 : LED is ON
+
+I (17238) main: Task 1 completed...
+
+I (17239) main: GPIO2 PIN set to 0 : LED is OFF
+
+I (17738) main: Task 2 completed...
+
+I (17739) main: STATUS of GPIO2: 0
+
+I (17741) main: Task 3 completed...
+
+I (18239) main: GPIO2 PIN set to 1 : LED is ON
+
+I (18738) main: Task 1 completed...
+
+I (18739) main: GPIO2 PIN set to 0 : LED is OFF
+
