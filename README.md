@@ -1,80 +1,21 @@
-# _GPIO Example_
+# _3006 Lab 2_
 
-_This test code shows how to configure gpio and how to use gpio interrupt._
+## Branching
 
-## GPIO functions
+ * The main branch only contains information about the repo and serves as the information oage
+ * Each question number is on a different branch since they build of each other
+ * If a question number has multiple parts, they will also be on a new and separate branch in the project
+ 
+## P1: How do the following files affect the FreeRTOS
 
- * GPIO15: output
- * GPIO16: output
- * GPIO4:  input, pulled up, interrupt from rising edge and falling edge
- * GPIO5:  input, pulled up, interrupt from rising edge.  
+### /project/sdkconfig
 
-## How to use example
+This file is application specific file. It sets the hardware configuration and customize the SDK for your specific board. Each project containts this file and it contains the settings and configuration for flashing the mircoprocessor. Thus, if the contents of this file is changed without caution, it can have cause an error in the flashing and serial monitoring process and impact the functionality of the device. For example, if a function is not defined properly then its functionality would not be available to the device.
 
-### Hardware Required
+### /project/build/include/sdkconfig.h
 
- * Connect GPIO15 with GPIO4
- * Connect GPIO16 with GPIO5
+This is also an application specific file. It defines what you want the sdk can be set up to do and also what features of the kernel you want to be turned on or off. The file's #DEFINE's are set up when the project is successfully build and is generated according to the project's sdkconfig file. The sdkconfig file will therefore update the information in this header file and errors in that file would also affect this file. Additionally, if you have a memory or space issue, you can turn features off here to reduce the additional tasks that will be launched for those specific functions and will reduce the size of the final binary. 
 
-### Configure the project
+### /sdk/components/freertos/port/esp8266/include/freertos/FreeRTOSConfig.h
 
-```
-make menuconfig
-```
-
-* Set serial port under Serial Flasher Options.
-
-
-### Build and Flash
-
-Build the project and flash it to the board, then run monitor tool to view serial output:
-
-```
-make -j4 flash monitor
-```
-
-(To exit the serial monitor, type ``Ctrl-]``.)
-
-See the Getting Started Guide for full steps to configure and use ESP-IDF to build projects.
-
-## Example Output  
-
- * Generate pulses on GPIO15/16, that triggers interrupt on GPIO4/5
-
-```
-I (0) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0
-I (0) gpio: GPIO[16]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0
-I (0) gpio: GPIO[4]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:1
-I (0) gpio: GPIO[5]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:1
-I (0) main: cnt: 0
-
-I (1) main: cnt: 1
-
-I (1) main: GPIO[4] intr, val: 1
-
-I (1) main: GPIO[5] intr, val: 1
-
-I (2) main: cnt: 2
-
-I (2) main: GPIO[4] intr, val: 0
-
-I (3) main: cnt: 3
-
-I (3) main: GPIO[4] intr, val: 1
-
-I (3) main: GPIO[5] intr, val: 1
-
-I (4) main: cnt: 4
-
-I (4) main: GPIO[4] intr, val: 0
-
-I (5) main: cnt: 5
-
-I (5) main: GPIO[4] intr, val: 1
-
-I (5) main: GPIO[5] intr, val: 1
-
-I (6) main: cnt: 6
-
-I (6) main: GPIO[4] intr, val: 0
-```
+This is a port specific file. It configures FreeRTOS for the ESP SDK. If you turn off a function here the function would not be available on the SDK. Thus, defining the statements allows for the use of the functions from the FreeRTOS Kernel but increases the size of the binary. If a function is not defined in this file, it would not be accessible even if it is defined in the other files.
