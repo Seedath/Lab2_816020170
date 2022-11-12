@@ -1,6 +1,6 @@
-# _GPIO Example_
+# _3006 Lab 2_
 
-_This test code shows how to configure gpio and how to use gpio interrupt._
+
 
 ## GPIO functions
 
