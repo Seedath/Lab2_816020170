@@ -18,4 +18,4 @@ This is also an application specific file. It defines what you want the sdk can 
 
 ### /sdk/components/freertos/port/esp8266/include/freertos/FreeRTOSConfig.h
 
-This is a port specific file. It configures FreeRTOS for the ESP SDK. If you turn off a function here the function would not be available on the SDK. Thus, defining the statements allows for the use of the functions but increases the size of the binary. 
+This is a port specific file. It configures FreeRTOS for the ESP SDK. If you turn off a function here the function would not be available on the SDK. Thus, defining the statements allows for the use of the functions from the FreeRTOS Kernel but increases the size of the binary. If a function is not defined in this file, it would not be accessible even if it is defined in the other files.
