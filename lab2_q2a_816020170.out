@@ -118,7 +118,7 @@ I (1243) main: STATUS of GPIO2: 0
 
 I (1243) main: Task 3 completed...
 
-Task            Abs Time        Time
+Task            Abs Time        %
 ************************************
 uiT             13664           1
 IDLE            0               <1
