@@ -22,6 +22,7 @@
 #include "sys/time.h"
 #include "esp_log.h"
 #include "esp_system.h"
+#include <esp_sleep.h>
 
 static const char *TAG = "main";
 
@@ -40,6 +41,9 @@ static void task3_print(void *pvParameters);
 
 static char stats_buffer[2000];
 void vTaskGetRunTimeStats(char *pcWriteBuffer);
+
+/* IDLE "hook" function for putting processor to sleep */
+void vApplicationIdleHook(void);
 
 static void task1_on(void *pvParameters)
 {
@@ -121,6 +125,16 @@ static void task3_print(void *pvParameters){
 	}
 }
 
+void vApplicationIdleHook(void){
+	esp_err_t ret;
+	ESP_LOGI(TAG,"Sleeping for 1 second\n");
+	/* Task will wake up after 1,000,000 microsecs*/
+	ret = esp_sleep_enable_timer_wakeup(1000000);
+	if(ret == ESP_OK){
+		esp_light_sleep_start();
+	}
+}
+
 void app_main(void)
 {
     gpio_config_t io_conf;
@@ -143,18 +157,19 @@ void app_main(void)
     xMutex = xSemaphoreCreateMutex();
 	
 	/*FreeRTOS uses preemptive round-robin scheduling if priorities are equal*/
-    xTaskCreate(task1_on, "LED ON", 2048, NULL, 2, NULL);
+    xTaskCreate(task1_on, "LED ON", 2048, NULL, 3, NULL);
 
     xTaskCreate(task2_off, "LED OFF", 2048, NULL, 2, NULL);
 
-    xTaskCreate(task3_print, "Print Status", 2048, NULL, 2, NULL);
+    xTaskCreate(task3_print, "Print Status", 2048, NULL, 1, NULL);
 	
 	vTaskGetRunTimeStats(stats_buffer);
 	
-	printf("Task            Abs Time        Time\n");
+	printf("Task            Abs Time        %%Time\n");
     printf("************************************\n");
     printf(stats_buffer, "\n");
 	
-	for(;;)
-		;
+	for(;;){
+		vApplicationIdleHook();
+	};	
 }
