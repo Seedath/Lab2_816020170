@@ -1,0 +1,93 @@
+I (4288) main: GPIO2 PIN set to 1 : LED is ON
+
+I (4786) main: Task 1 completed...
+
+I (4787) main: GPIO2 PIN set to 0 : LED is OFF
+
+I (5285) main: Task 2 completed...
+
+I (5286) main: STATUS of GPIO2: 0
+
+I (5287) main: Task 3 completed...
+
+I (5288) main: Sleeping for 1 second
+
+I (6295) main: GPIO2 PIN set to 1 : LED is ON
+
+I (6793) main: Task 1 completed...
+
+I (6794) main: GPIO2 PIN set to 0 : LED is OFF
+
+I (7292) main: Task 2 completed...
+
+I (7293) main: STATUS of GPIO2: 0
+
+I (7294) main: Task 3 completed...
+
+I (7295) main: Sleeping for 1 second
+
+I (8303) main: GPIO2 PIN set to 1 : LED is ON
+
+I (8801) main: Task 1 completed...
+
+I (8802) main: GPIO2 PIN set to 0 : LED is OFF
+
+I (9300) main: Task 2 completed...
+
+I (9301) main: STATUS of GPIO2: 0
+
+I (9302) main: Task 3 completed...
+
+I (9303) main: Sleeping for 1 second
+
+I (10310) main: GPIO2 PIN set to 1 : LED is ON
+
+I (10808) main: Task 1 completed...
+
+I (10809) main: GPIO2 PIN set to 0 : LED is OFF
+
+I (11307) main: Task 2 completed...
+
+I (11308) main: STATUS of GPIO2: 0
+
+I (11309) main: Task 3 completed...
+
+I (11311) main: Sleeping for 1 second
+
+I (12318) main: GPIO2 PIN set to 1 : LED is ON
+
+I (12816) main: Task 1 completed...
+
+I (12817) main: GPIO2 PIN set to 0 : LED is OFF
+
+I (13315) main: Task 2 completed...
+
+I (13316) main: STATUS of GPIO2: 0
+
+I (13317) main: Task 3 completed...
+
+I (13319) main: Sleeping for 1 second
+
+I (14326) main: GPIO2 PIN set to 1 : LED is ON
+
+I (14824) main: Task 1 completed...
+
+I (14825) main: GPIO2 PIN set to 0 : LED is OFF
+
+I (15323) main: Task 2 completed...
+
+I (15324) main: STATUS of GPIO2: 0
+
+I (15325) main: Task 3 completed...
+
+I (15327) main: Sleeping for 1 second
+
+
+Task            Abs Time        %Time
+************************************
+uiT             13457           1
+Print Status    0               <1
+IDLE            0               <1
+LED OFF         499263          42
+LED ON          502784          43
+Tmr Svc         148723          12
