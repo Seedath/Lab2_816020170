@@ -39,4 +39,6 @@ In V1, there were instances of priority inheritance in the output file as we see
 
 V3 and V6 share a similar situation to V1 and V2 except LED OFF is the lower priority and LED ON has the higher priority. Again, priority inheritance occurs in V3 to allow the lower priority task (LED OFF) to be temporarily raised to the priority of the higher priority task (LED ON) so that it can minimize priority inversion and access the mutex for a short time and for a short time blocks Print Status from running. Again, in V6, I expected priority inversion to happen for the lower prio task (LED OFF) but this task was only able to run after the two other tasks ran and were in task delay which again may be due to setting the lowest priority task to a prio of 1.
 
-This method may be useful in reducing the priority inversion while allowing the mutex to be accessed by different tasks as seen in V4 where the tasks both share equal time but had priority inversion.
+For all cases, jitter could not be analyzed using the output files or timing stats.
+
+This method may be useful in reducing the priority inversion while allowing the mutex to be accessed by different tasks as seen in V4 where the tasks both share equal time but had priority inversion. This can improve the performance if the system in those cases as it would ensure that the mutex gets realeased and reduces the jitter. 
